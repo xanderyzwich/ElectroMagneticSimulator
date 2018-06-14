@@ -1,0 +1,69 @@
+Class: Layer
+
+Data:
+space is a square numpy array 
+s is the measure of height and width of the array
+s1 is size+1 for symmetry the axes are added to size
+s2 is half of the size
+s4 is a quarter of the size
+shape is (s,s)
+
+Functions:
+insert is a basic setter for 2D array
+mirror2 inserts points at (x,y) and (-x,y)
+mirror4 adds the points at (x,-y) and (-x,-y)
+mirror8 adds the reflexion lines x=y and x+y=k
+show outputs the array to the screen
+
+Class: Tools
+
+Data: None
+
+Functions:
+pi returns the math.pi value
+E0 returns 8.85E-12
+read takes in an image and returns an array
+write stores an array as an image
+radv returns v3=v2-v1 vector
+rad returns the vector from point-1 to point-2
+magnitude returns the scalar from the rad vector
+unitrad returns the direction from the rad vector
+blank returns ( 0.0, 0.0, 0.0 ) vector
+field  given 2 points and a charge value it returns a vector for the electric field
+
+Class: Simulation
+
+Data:
+s is the size not including axes
+s1 includes the axes
+s2 is the distance in both directions from the axes
+offset is the location of the axes
+s3 is the floor value of the size/3
+magnitude corresponds with the total charge, the linear charge density, or the voltage difference between plates
+infinite is a boolean value for if the object is infinite
+image is the string that references the object type
+top, front, and side are images representing magnitude of electric field due to the charged object
+top has positive x to the right and y down
+front has positive y right and z down
+side has positive x right and z down
+
+Functions:
+interrogate-- p=(x,y,z)
+takes in cartesian co-ordinates and a boolean for difficult cases
+the algorythm checks to make sure that p is not inside the object,
+and then for the case of parallel plates
+next is  the general infinite case
+then is the "bloated" portion (originally involved 3 nested loops)
+else statement models the object as a point at the origin
+
+draw--
+renders "images" of the objects being simulated
+
+render--
+loops over the "space" and interrogates each point that it comes to
+
+inside--
+this method interprets whether or not the point is inside the object, 
+alternatively it returns true for the point being outside of the plates
+this stems from the intention that this method tell when not to calculate
+
