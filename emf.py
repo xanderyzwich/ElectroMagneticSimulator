@@ -18,17 +18,17 @@ class emfDemo(simplePanel):
 	
 	panel.add(panel0)
 	
-	wire=Image("Pictures/wire.png")
+	wire=Image("pictures/wire.png")
 	wire.addClickListener(getattr(self, "wireClick"))
-	box=Image("Pictures/box.png")
+	box=Image("pictures/box.png")
 	box.addClickListener(getattr(self, "boxClick"))
-	block=Image("Pictures/block.png")
+	block=Image("pictures/block.png")
 	block.addClickListener(getattr(self,"blockClick"))
-	rod=Image("Pictures/rod.png")
+	rod=Image("pictures/rod.png")
 	rod.addClickListener(getattr(self,"rodClick"))
-	tube=Image("Pictures/tube.png")
+	tube=Image("pictures/tube.png")
 	tube.addClickListener(getattr(self."tubeClick"))
-	plates=Image("Pictures/plates.png")
+	plates=Image("pictures/plates.png")
 	plates.addClickListener(getattr(self."tubeClick"))
 
 	panel1=HorizontalPanel()

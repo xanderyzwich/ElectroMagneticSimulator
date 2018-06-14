@@ -1,7 +1,7 @@
 from numpy import array,zeros,ones
 from scipy.misc import toimage
 from math import sqrt,floor
-class Layer(object):
+class layer(object):
 
 	def __init__(self,size):
 		self.size=size			# size of object in mm
@@ -53,7 +53,7 @@ class Layer(object):
 		im=toimage(im)
 		im.show()
 
-class Wire(Layer):
+class Wire(layer):
 	def __init__(self,size):
 		super(Wire, self).__init__(size)
 		self.square=0
@@ -77,7 +77,7 @@ class Wire(Layer):
 	def draw(self):
 		self.set(self.offset,self.offset,1)
 
-class Box(Layer):
+class Box(layer):
 	def __init__(self,size):
 		super(Box, self).__init__(size)
 		self.square=1
@@ -108,7 +108,7 @@ class Box(Layer):
 	def show(self):
 		super(Box, self).show()
 
-class Block(Layer):
+class Block(layer):
 	def __init__(self,size):
 		super(Block, self).__init__(size)
 		self.image=ones((size,size))
@@ -153,7 +153,7 @@ class Block(Layer):
 	def show(self):
 		super(Block, self).show()
 
-class Tube(Layer):
+class Tube(layer):
 	def __init__(self,size):
 		super(Tube, self).__init__(size)
 		self.square=0
@@ -186,7 +186,7 @@ class Tube(Layer):
 		self.mirror4(0,r,1)
 		self.count+=4
 
-class Rod(Layer):
+class Rod(layer):
 	def __init__(self,size):
 		super(Rod, self).__init__(size)
 		self.square=0
@@ -224,7 +224,7 @@ class Rod(Layer):
 	def show(self):
 		super(Rod, self).show()
 
-class Plates(Layer):
+class Plates(layer):
 	def __init__(self,size):
 		super(Plates, self).__init__(size)
 		self.draw()

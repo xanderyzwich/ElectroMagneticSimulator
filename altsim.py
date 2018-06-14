@@ -1,5 +1,5 @@
 from layers import *
-from Layer import *
+from layer import *
 from numpy import array,zeros
 import tools
 from math import sqrt,floor
@@ -46,7 +46,7 @@ class Simulation:
 	def draw(self):
 		self.thing.show()
 		g=50 # pixels per meter
-		top=Layer(500)
+		top=layer(500)
 		r=1
 		i=1
 		while r<=250:
@@ -61,7 +61,7 @@ class Simulation:
 		q=top.space[:,top.s2]
 		if self.infinite:
 			i=0
-			side=Layer(500)
+			side=layer(500)
 			while i<side.s1:
 				side.space[:,i]=q
 				i+=1

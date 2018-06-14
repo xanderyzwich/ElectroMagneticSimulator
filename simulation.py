@@ -1,5 +1,5 @@
 from layers import *
-from Layer import *
+from layer import *
 from numpy import array,zeros
 import tools
 
@@ -72,8 +72,8 @@ class Simulation:
 		g=50	# pixels per meter
 		end=tools.fieldr(self.charge,0.1*self.E1)*g
 		l=(2*end)
-		self.top=Layer(l)
-		self.side=Layer(l)
+		self.top=layer(l)
+		self.side=layer(l)
 		h=0.1
 		while h<1:
 			r=tools.fieldr(self.charge,h*self.E1)*g

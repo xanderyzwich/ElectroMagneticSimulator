@@ -2,7 +2,7 @@ import numpy as np
 from scipy.misc import toimage
 
 #	this creates a 2D layer to be used in the space class
-class Layer:
+class layer:
 	def __init__(self, size):
 		self.s=size
 		self.s1=size+1
