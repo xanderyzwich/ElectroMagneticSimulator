@@ -43,8 +43,6 @@ class Simulation:
 			# 1000 layers per meter
 			self.thing.scale(self.charge*1e-3)
 		#self.start()
-
-
 	def draw(self):
 		self.thing.show()
 		g=50 # pixels per meter

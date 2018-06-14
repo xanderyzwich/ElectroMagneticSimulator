@@ -7,8 +7,6 @@ from pyjamas.ui.Label import Label
 from pyjamas.ui.FormPanel import FormPanel
 from pyjamas.ui.TextBox import TextBox
 from pyjamas.ui.Button import Button
-
-
 class emfDemo(simplePanel):
 	def __init__(self):
 		SimplePanel.__init__(self)
@@ -63,8 +61,6 @@ class emfDemo(simplePanel):
 	panel3=HorizontalPanel()
 	
 	lambda=Label("string",wordwrap=False)
-
-
 
 	self.add(panel)
 

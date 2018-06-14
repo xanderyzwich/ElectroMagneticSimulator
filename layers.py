@@ -1,8 +1,6 @@
 from numpy import array,zeros,ones
 from scipy.misc import toimage
 from math import sqrt,floor
-
-
 class Layer(object):
 
 	def __init__(self,size):
@@ -119,8 +117,6 @@ class Block(Layer):
 		self.value=1
 		self.count=size**2
 		#self.draw()
-
-
 	def draw(self):
 		self.count=0
 		x=self.small
