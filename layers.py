@@ -6,7 +6,7 @@ from math import sqrt, floor
 import tools
 
 
-class layer(object):
+class Layer(object):
 
     def __init__(self, size):
         self.size = size  # size of object in mm
@@ -14,7 +14,7 @@ class layer(object):
         self.s2 = round(size / 2)  # distance left and right of axis
         self.small = self.s2 * (-1)  # negative end of array
         self.offset = self.s2 + 1  # axis location
-        self.shape = array((self.s1, self.s1))
+        self.shape = (self.s1, self.s1)
         self.image = zeros(self.shape)
 
     def set(self, x, y, value):
@@ -91,7 +91,7 @@ class Wire(Layer):
         self.set(self.offset, self.offset, 1)
 
 
-class Box(layer):
+class Box(Layer):
     def __init__(self, size):
         super(Box, self).__init__(size)
         self.square = 1
@@ -129,7 +129,7 @@ class Box(layer):
         super(Box, self).show()
 
 
-class Block(layer):
+class Block(Layer):
     def __init__(self, size):
         super(Block, self).__init__(size)
         self.image = ones((size, size))
@@ -182,7 +182,7 @@ class Block(layer):
         super(Block, self).show()
 
 
-class Tube(layer):
+class Tube(Layer):
     def __init__(self, size):
         super(Tube, self).__init__(size)
         self.square = 0
@@ -222,7 +222,7 @@ class Tube(layer):
         self.count += 4
 
 
-class Rod(layer):
+class Rod(Layer):
     def __init__(self, size):
         super(Rod, self).__init__(size)
         self.square = 0
@@ -267,7 +267,7 @@ class Rod(layer):
         super(Rod, self).show()
 
 
-class Plates(layer):
+class Plates(Layer):
     def __init__(self, size):
         super(Plates, self).__init__(size)
         self.draw()

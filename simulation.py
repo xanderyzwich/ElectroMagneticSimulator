@@ -1,4 +1,4 @@
-from layers import *
+from layers import Layers
 from layer import *
 from numpy import array, zeros
 import tools
@@ -14,7 +14,7 @@ class Simulation:
         self.charge = charge
         self.thing = None
 
-        ## create the charged object in 2D
+        # create the charged object in 2D
         if image == 'wire':
             self.thing = Wire(self.size)
         elif image == 'box':
@@ -45,11 +45,11 @@ class Simulation:
     # self.start()
 
     def start(self):
-        # this method finds the magnitude of the field
-        # on the positive x side of the object
-        # this will later be used to cheat other calculations
-        # the cheats are based on known equipotential lines around the object
-        # and how to draw them
+        """
+        Used to cheat other calculations
+        based on known equipotential lines around the object and how to draw them
+        :return: field magnitude on positive x side of the object
+        """
         self.E1 = 0.0
         temp = 0.0
         i = self.thing.small
@@ -73,8 +73,8 @@ class Simulation:
         g = 50  # pixels per meter
         end = tools.fieldr(self.charge, 0.1 * self.E1) * g
         l = (2 * end)
-        self.top = layer(l)
-        self.side = layer(l)
+        self.top = Layer(l)
+        self.side = Layer(l)
         h = 0.1
         while h < 1:
             r = tools.fieldr(self.charge, h * self.E1) * g

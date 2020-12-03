@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 
 # this creates a 2D layer to be used in the space class
-class layer:
+class Layer:
     def __init__(self, size):
         self.s = size
         self.s1 = size + 1
@@ -38,9 +38,9 @@ class layer:
         self.space[y2, x2] = value
 
     def mirror4(self, x, y, value):
+        # this just considers mirror in vertical and horizontal
         if value == 0:
             return
-        # this just considers mirror in vertical and horizontal
         x2 = self.s - x
         y2 = self.s - y
         self.space[x, y] = value
@@ -61,7 +61,7 @@ class layer:
         plt.axis('off')
         plt.show()
 
-    def getmax(self):
+    def get_max(self):
         maximum = 0.0
         i = 0
         while i <= self.s1:
@@ -73,7 +73,7 @@ class layer:
             i += 1
         return maximum
 
-    def getmin(self):
+    def get_min(self):
         minimum = 0.0
         i = 0
         while i <= self.s1:

@@ -4,3 +4,5 @@
 garbage.py
 
 venv/
+
+__pycache__/
