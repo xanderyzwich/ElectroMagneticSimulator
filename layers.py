@@ -1,5 +1,6 @@
 from numpy import array, zeros, ones
-from scipy.misc import toimage
+from scipy import misc
+from matplotlib import pyplot as plt
 from math import sqrt, floor
 
 import tools
@@ -54,11 +55,12 @@ class layer(object):
 
     def show(self):
         im = self.image * 255
-        im = toimage(im)
-        im.show()
+        plt.imshow(im)
+        plt.axis('off')
+        plt.show()
 
 
-class Wire(layer):
+class Wire(Layer):
     def __init__(self, size):
         super(Wire, self).__init__(size)
         self.square = 0

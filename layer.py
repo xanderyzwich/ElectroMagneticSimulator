@@ -1,5 +1,6 @@
 import numpy as np
-from scipy.misc import toimage
+from scipy import misc
+from matplotlib import pyplot as plt
 
 
 # this creates a 2D layer to be used in the space class
@@ -56,7 +57,9 @@ class layer:
         self.space[x2, y] = value
 
     def show(self):
-        toimage(self.space).show()
+        plt.imshow(self.space)
+        plt.axis('off')
+        plt.show()
 
     def getmax(self):
         maximum = 0.0
